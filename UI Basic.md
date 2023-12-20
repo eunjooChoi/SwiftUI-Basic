@@ -123,3 +123,30 @@
                         )
                 )
 ```
+
+# Stack
+- VStack: Vertical Stack (세로)
+- HStack: Horizontal Stack (가로)
+- ZStack: Z-Index Stack (겹쳐서, 약간 overlay의 느낌처럼 겹쳐짐)
+    - layer가 복잡할 때 ZStack을 사용하면 좋음
+    
+# Padding, Spacer
+## Padding
+- 각 요소간 간격 설정
+- `.padding()` : `.padding(.all, 15)`와 같다.
+- 같은 View에 padding을 여러 번 줄 수 있다.
+    - background() 코드를 기준으로 아래에 padding을 추가하면 background 위에 있던 padding과 별개의 padding 영역이 생긴다.
+- `.padding(.vertical, 30)` 처럼 원하는 부분에만 padding 값을 넣어줄 수 있다.
+
+## Spacer
+- View 간의 거리를 일정한 간격으로 띄울 수 있다.
+    - 자기가 공간을 최대한 차지하고 싶어해서 좌우(혹은 위아래)로 벌어진다.
+
+```swift
+Spacer(minLength: 0)
+       .frame(height: 10)
+       .background(.orange)
+```
+
+- minLength를 지정할 수 있고, frame으로 높이를 지정해줄 수도 있다.
+
