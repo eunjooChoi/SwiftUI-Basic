@@ -150,3 +150,45 @@ Spacer(minLength: 0)
 
 - minLength를 지정할 수 있고, frame으로 높이를 지정해줄 수도 있다.
 
+# ScrollView
+- View 영역을 스크롤할 수 있게 만듦
+    - 가로
+    - 세로
+    - 가로 + 세로
+    
+```swift
+ScrollView(.vertical or .horizontal, showsIndicators: true) {
+    ...
+        // 방향 default: .vertical
+    // showIndicators: 스크롤바 노출 여부를 결정. default: true
+}
+```
+
+# LazyGrid
+## List vs Grid
+- List: 일반적 목록 배열
+- Grid: 박스 형태
+
+## LazyV(H)Grid
+- 화면에 필요한만큼만 생성하는 Grid
+
+```swift
+LazyVGrid(columns:alignment:spacing:pinnedViews:content:)
+// colums: Vertical Grid이므로 몇 열이 들어가야하는 지 지정함. [GridItem]을 넣어줌
+// alignment: 정렬
+// spacing: 컨텐츠 사이 간격 지정
+// pinnedViews: [.sectionHeaders]와 같은 배열을 추가할 수 있으며 이 경우에는 header가 고정이 된 채로 스크롤 됨
+// content: GridView 내부에 들어갈 컨텐츠 작성.
+```
+
+```swift
+LazyHGrid(rows:spacing:pinnedViews:content:)
+```
+
+#Button
+
+```swift
+Button(action:label:)
+// action: 버튼이 눌리면 어떤 동작을 해야하는지를 구현
+// label: 버튼의 모양을 커스텀할 수 있음. 이미지를 추가할 수도 있고, 버튼의 배경화면이나 기본 모양을 조절 가능
+```
