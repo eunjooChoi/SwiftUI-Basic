@@ -9,6 +9,7 @@
 - .underline(bool, color:) : 밑줄
 - .forgroundColor() : 글자 색 지정
 
+
 # Shpae
 ## 기본적으로 지원해주는 다양한 shape 존재
 - Circle
@@ -22,6 +23,7 @@
 - .stroke(color, lineWidth:) 외곽선 세팅
 - .trim(from: to:) : 도형을 자를 수 있음
 - .frame(width: height: alignment:): 원하는 사이즈 지정
+
 
 # Color
 ## 시스템 색 설정
@@ -66,6 +68,7 @@
 - Angular Gradient
     - 원하는 각도로 그라디언트 들어감
 
+
 # Image
 ## SystemIcon
 ### SF Symbols
@@ -85,6 +88,7 @@
     - 주어진 공간을 최대한 채움 (이미지 잘려도 상관 안함)
 - scaleToFit()
     - 주어진 공간에 사진이 전부 나오도록 이미지 사이즈가 조절됨
+
 
 # Frame
 ## Frame
@@ -124,11 +128,13 @@
                 )
 ```
 
+
 # Stack
 - VStack: Vertical Stack (세로)
 - HStack: Horizontal Stack (가로)
 - ZStack: Z-Index Stack (겹쳐서, 약간 overlay의 느낌처럼 겹쳐짐)
     - layer가 복잡할 때 ZStack을 사용하면 좋음
+   
     
 # Padding, Spacer
 ## Padding
@@ -150,6 +156,7 @@ Spacer(minLength: 0)
 
 - minLength를 지정할 수 있고, frame으로 높이를 지정해줄 수도 있다.
 
+
 # ScrollView
 - View 영역을 스크롤할 수 있게 만듦
     - 가로
@@ -163,6 +170,7 @@ ScrollView(.vertical or .horizontal, showsIndicators: true) {
     // showIndicators: 스크롤바 노출 여부를 결정. default: true
 }
 ```
+
 
 # LazyGrid
 ## List vs Grid
@@ -185,6 +193,7 @@ LazyVGrid(columns:alignment:spacing:pinnedViews:content:)
 LazyHGrid(rows:spacing:pinnedViews:content:)
 ```
 
+
 #Button
 
 ```swift
@@ -192,3 +201,12 @@ Button(action:label:)
 // action: 버튼이 눌리면 어떤 동작을 해야하는지를 구현
 // label: 버튼의 모양을 커스텀할 수 있음. 이미지를 추가할 수도 있고, 버튼의 배경화면이나 기본 모양을 조절 가능
 ```
+
+
+# Sheet
+
+- sheet 내부에 트랜지션이 적용되어있음.
+    - `.sheet` 현재 View에서 약 90% 정도 overlay 되는 view
+    - `.fullScreenCover` 현재 View에서 전체 화면으로 overlay 되는 view
+
+- sheet를 닫을 때는 `@Environment(\.dismiss) var dismiss` 로 dismiss 수행 가능
