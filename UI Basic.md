@@ -210,3 +210,44 @@ Button(action:label:)
     - `.fullScreenCover` 현재 View에서 전체 화면으로 overlay 되는 view
 
 - sheet를 닫을 때는 `@Environment(\.dismiss) var dismiss` 로 dismiss 수행 가능
+
+
+# Navigation
+
+- NavigationView: 네비게이션 스택을 사용해 다른 화면으로 전환
+- NavigationLink: event 또는 특정 조건을 만족하면 지정한 목정지로 이동
+    - 새로운 화면이 나타날 때 이전 버튼이 자동 생성됨
+- `.navigationTitle("상단 페이지 제목")` : 상단 Title
+- `.navigationBarTitleDisplayMode(.large)`
+    - .large는 큰 Title, .inline은 작은 타이틀, .automatic은 자동
+- `.toolbar(.hidden)` : 상단 Title 숨김 처리
+- NavigationItem은 deprecated이므로 toolbar로 사용
+
+```swift
+          .toolbar {
+                                // Item 여러개 쓰고 싶을 때는 ToolbarItemGroup 사용
+                ToolbarItem(placement: .topBarLeading) {
+                    Button("menu", systemImage: "line.3.horizontal") {
+                        // 액션 on
+                    }
+                }
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: {
+                        showSheet.toggle()
+                    }, label: {
+                        Image(systemName: "gear")
+                    })
+                }
+            }
+```
+
+- n번째 navigation 화면을 Preview로 볼 때
+
+```swift
+#Preview {
+    NavigationView {
+        SecondNavigationView()
+    }
+}
+```
