@@ -215,6 +215,7 @@ Button(action:label:)
 # Navigation
 
 - NavigationView: 네비게이션 스택을 사용해 다른 화면으로 전환
+    - NavigationView는 deprecate 됨. 지금은 NavigationStack을 사용
 - NavigationLink: event 또는 특정 조건을 만족하면 지정한 목정지로 이동
     - 새로운 화면이 나타날 때 이전 버튼이 자동 생성됨
 - `.navigationTitle("상단 페이지 제목")` : 상단 Title
@@ -251,3 +252,22 @@ Button(action:label:)
     }
 }
 ```
+
+
+# List
+
+```swift
+NavigationStack {
+        List {
+                Section {
+                        // content
+                } header: {
+                        // header title
+                }
+        }
+}
+```
+
+- `.onDelete(perform: delete 수행 동작 메서드)`
+- `.onMove(perform: move 수행 동작 메서드)`
+- `.listRowBackground(Color.blue)` : List row의 배경색 변경
