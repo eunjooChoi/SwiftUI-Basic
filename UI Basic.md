@@ -271,3 +271,30 @@ NavigationStack {
 - `.onDelete(perform: delete 수행 동작 메서드)`
 - `.onMove(perform: move 수행 동작 메서드)`
 - `.listRowBackground(Color.blue)` : List row의 배경색 변경
+
+
+# Alert
+
+```swift
+.alert("패스워드 에러입니다", isPresented: $showAlert1) { 
+            // action 코드가 비어있는 경우 자동으로 OK 액션이 들어감
+}
+```
+
+```swift
+.alert("Delete Message", isPresented: $showAlert2) {
+    Button(role: .destructive, action: {}) {
+           Text("Delete")
+    }
+                    
+    Button(role: .cancel, action: {}) {
+           Text("Cancel")
+    }
+} message: {
+    Text("정말로 삭제할거여?")
+}
+
+// OK, Cancel 처럼 버튼이 두 개 있는 경우는 actions에 버튼을 두 개 넣으면 됨
+```
+
+
